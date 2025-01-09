@@ -5,8 +5,8 @@
 #
 
 # Gapps
-$(call inherit-product-if-exists, vendor/google/gms/config.mk)
-$(call inherit-product-if-exists, vendor/google/pixel/config.mk)
+$(call inherit-product-if-exists, vendor/google/gms/gms_full.mk)
+$(call inherit-product-if-exists, vendor/google/pixel-style/config/common.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
