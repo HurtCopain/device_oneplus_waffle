@@ -7,7 +7,7 @@
 # Include the common OEM chipset BoardConfig.
 include device/oneplus/sm8650-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/oneplus/waffle
+DEVICE_PATH := device/oneplus/oneplus12
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := OP5929L1|OP595DL1
