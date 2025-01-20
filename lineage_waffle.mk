@@ -13,29 +13,20 @@ $(call inherit-product, device/oneplus/waffle/device.mk)
 
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Addons
-TARGET_HAS_UDFPS := true
-TARGET_ENABLE_BLUR := true
-WITH_GMS := true
-TARGET_CORE_GMS := true
-TARGET_CORE_GMS_EXTRAS := true
-TARGET_GMS_EXTRAS := true
-WITH_PIXEL_OVERLAYS := false
-TARGET_FACE_UNLOCK_SUPPORTED := true
-PRODUCT_NO_CAMERA := false
-TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
-TARGET_DEFAULT_PIXEL_LAUNCHER := false
-
-# extra add-ons for core GMS builds
-# List of add-ons
-PRODUCT_PACKAGES += \
-    Photos \
-    MarkupGoogle \
-    LatinIMEGooglePrebuilt \
-    PrebuiltDeskClockGoogle \
-    CalculatorGooglePrebuilt \
-    CalendarGooglePrebuilt \
-    Velvet
+# Inherit some common TheParasiteProject stuffs.
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_SUPPORTS_CALL_RECORDING := true
+TARGET_CHARGER_RESOURCE_COPY_OUT := $(TARGET_COPY_OUT_VENDOR)
+TARGET_INCLUDE_CARRIER_SERVICES := true
+TARGET_INCLUDE_CARRIER_SETTINGS := true
+TARGET_INCLUDE_PIXEL_EUICC := true
+TARGET_SUPPORTS_GOOGLE_BATTERY := false
+TARGET_GBOARD_KEY_HEIGHT := 1.1
+TARGET_EEA_V2_DEVICE := true
+TARGET_SUPPORTS_DSE_CHOICE_SCREEN := true
+TARGET_BOOT_ANIMATION_RES := 1440
 
 PRODUCT_NAME := lineage_waffle
 PRODUCT_DEVICE := waffle
@@ -60,13 +51,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     SystemName=CPH2581
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
-
-# Lunch banner maintainer variable
-RISING_MAINTAINER="hurtcopain"
-RISING_PACKAGE_TYPE := "WITH_GMS"
-
-# Chipset/Maintainer properties (ro.rising.chipset/ro.rising.maintainer) 
-# (Optional if builder is setting properties via init_<device>.cpp)
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    RisingChipset="Qualcomm Snapdragon 8 Gen 3" \
-    RisingMaintainer="unofficial-hurtcopain"
